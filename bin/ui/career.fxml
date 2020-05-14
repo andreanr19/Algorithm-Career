@@ -5,7 +5,10 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
@@ -44,7 +47,7 @@
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="469.0" layoutY="147.0" text="Final Results">
+      <Label layoutX="470.0" layoutY="25.0" text="Final Results">
          <font>
             <Font name="Arial Rounded MT Bold" size="28.0" />
          </font>
@@ -127,5 +130,22 @@
       <Label fx:id="deleteABBR" layoutX="616.0" layoutY="416.0" prefHeight="17.0" prefWidth="69.0" />
       <Label fx:id="deleteArraylistR" layoutX="435.0" layoutY="416.0" prefHeight="17.0" prefWidth="61.0" />
       <Label fx:id="deleteLER" layoutX="523.0" layoutY="416.0" prefHeight="17.0" prefWidth="69.0" />
+      <ImageView fitHeight="72.0" fitWidth="80.0" layoutX="422.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/arraylist.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="80.0" layoutX="517.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/linkedlist.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="86.0" layoutX="613.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/arbolabb.jpg" />
+         </image>
+      </ImageView>
+      <Circle fx:id="bigCircle" fill="#1fffda" layoutX="153.0" layoutY="370.0" radius="69.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="smallCircle" fill="DODGERBLUE" layoutX="153.0" layoutY="369.0" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>

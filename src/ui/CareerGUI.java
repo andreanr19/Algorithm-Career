@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.shape.Circle;
 import model.Career;
 import threads.AddABBThread;
 import threads.AddArraylistThread;
@@ -19,6 +20,7 @@ import threads.DeleteLinkedListThread;
 import threads.SearchABBThread;
 import threads.SearchArraylistThread;
 import threads.SearchLinkedListThread;
+import threads.ThreadAnimation;
 import threads.TimeKeeper;
 import threads.TimeThreadABB;
 import threads.TimeThreadArraylist;
@@ -124,6 +126,12 @@ public class CareerGUI {
 
 	@FXML
 	private Label deleteABBR;
+
+	@FXML
+	private Circle bigCircle;
+
+	@FXML
+	private Circle smallCircle;
 
 //	@FXML
 //	private Label timeKeeperLlb;
@@ -902,6 +910,7 @@ public class CareerGUI {
 			TimeKeeper tk = new TimeKeeper(this);
 
 			tk.start();
+
 			long number = Long.parseLong(numberTxtField.getText());
 			if (addRdoBtn.isSelected()) {
 
@@ -913,7 +922,8 @@ public class CareerGUI {
 					AddArraylistThread aat = new AddArraylistThread(career, this, ttarraylist);
 
 					TimeThreadLinkedList ttll = new TimeThreadLinkedList(this, 1);
-					AddLinkedListThread allt = new AddLinkedListThread(career, this, ttll);
+					ThreadAnimation ta = new ThreadAnimation(this);
+					AddLinkedListThread allt = new AddLinkedListThread(career, this, ttll, ta);
 
 					TimeThreadABB tt = new TimeThreadABB(this, 1);
 					AddABBThread aabbt = new AddABBThread(career, this, tt);
@@ -921,6 +931,7 @@ public class CareerGUI {
 					aabbt.start();
 					allt.start();
 					aat.start();
+
 				} else if (recursiveRdoBtn.isSelected()) {
 					restart();
 					career = new Career(number, 2);
@@ -928,7 +939,8 @@ public class CareerGUI {
 					AddArraylistThread aat = new AddArraylistThread(career, this, ttarraylist);
 
 					TimeThreadLinkedList ttll = new TimeThreadLinkedList(this, 2);
-					AddLinkedListThread allt = new AddLinkedListThread(career, this, ttll);
+					ThreadAnimation ta = new ThreadAnimation(this);
+					AddLinkedListThread allt = new AddLinkedListThread(career, this, ttll, ta);
 
 					TimeThreadABB ttabb = new TimeThreadABB(this, 2);
 					AddABBThread aabbt = new AddABBThread(career, this, ttabb);
@@ -947,8 +959,9 @@ public class CareerGUI {
 					TimeThreadArraylist tta = new TimeThreadArraylist(this, 3);
 					SearchArraylistThread sat = new SearchArraylistThread(career, this, tta);
 
+					ThreadAnimation ta = new ThreadAnimation(this);
 					TimeThreadLinkedList ttll = new TimeThreadLinkedList(this, 3);
-					SearchLinkedListThread slt = new SearchLinkedListThread(career, this, ttll);
+					SearchLinkedListThread slt = new SearchLinkedListThread(career, this, ttll, ta);
 
 					TimeThreadABB ttabb = new TimeThreadABB(this, 3);
 					SearchABBThread sabbt = new SearchABBThread(career, this, ttabb);
@@ -965,8 +978,9 @@ public class CareerGUI {
 					TimeThreadArraylist tta = new TimeThreadArraylist(this, 4);
 					SearchArraylistThread sat = new SearchArraylistThread(career, this, tta);
 
+					ThreadAnimation ta = new ThreadAnimation(this);
 					TimeThreadLinkedList ttll = new TimeThreadLinkedList(this, 4);
-					SearchLinkedListThread slt = new SearchLinkedListThread(career, this, ttll);
+					SearchLinkedListThread slt = new SearchLinkedListThread(career, this, ttll, ta);
 
 					TimeThreadABB ttabb = new TimeThreadABB(this, 4);
 					SearchABBThread sabbt = new SearchABBThread(career, this, ttabb);
@@ -985,8 +999,9 @@ public class CareerGUI {
 					TimeThreadArraylist tta = new TimeThreadArraylist(this, 5);
 					DeleteArraylistThread dat = new DeleteArraylistThread(career, this, tta);
 
+					ThreadAnimation ta = new ThreadAnimation(this);
 					TimeThreadLinkedList ttll = new TimeThreadLinkedList(this, 5);
-					DeleteLinkedListThread dlt = new DeleteLinkedListThread(career, this, ttll);
+					DeleteLinkedListThread dlt = new DeleteLinkedListThread(career, this, ttll, ta);
 
 					TimeThreadABB ttabb = new TimeThreadABB(this, 5);
 					DeleteABBThread dabbt = new DeleteABBThread(career, this, ttabb);
@@ -1002,8 +1017,9 @@ public class CareerGUI {
 					TimeThreadArraylist tta = new TimeThreadArraylist(this, 6);
 					DeleteArraylistThread dat = new DeleteArraylistThread(career, this, tta);
 
+					ThreadAnimation ta = new ThreadAnimation(this);
 					TimeThreadLinkedList ttll = new TimeThreadLinkedList(this, 6);
-					DeleteLinkedListThread dlt = new DeleteLinkedListThread(career, this, ttll);
+					DeleteLinkedListThread dlt = new DeleteLinkedListThread(career, this, ttll, ta);
 
 					TimeThreadABB ttabb = new TimeThreadABB(this, 6);
 					DeleteABBThread dabbt = new DeleteABBThread(career, this, ttabb);
@@ -1023,6 +1039,27 @@ public class CareerGUI {
 		}
 	}
 
+	private int max = 69;
+	private int min = 31;
+
+	public void circleAnimation() {
+		if (bigCircle.getRadius() > min) {
+			bigCircle.setRadius(bigCircle.getRadius() - 1);
+
+		} else if (bigCircle.getRadius() == min) {
+			while (bigCircle.getRadius() < max) {
+				bigCircle.setRadius(bigCircle.getRadius() + 1);
+			}
+		}
+		if (smallCircle.getRadius() < max) {
+			smallCircle.setRadius(smallCircle.getRadius() + 1);
+
+		} else if (smallCircle.getRadius() == max) {
+			while (smallCircle.getRadius() > min) {
+				smallCircle.setRadius(smallCircle.getRadius() - 1);
+			}
+		}
+	}
 //	public void updateGUI() {
 ////		timeKeeperTxtField.setText(career.getArraylistal().getNodes().get(9).getContent() + "");
 //		timeKeeper();

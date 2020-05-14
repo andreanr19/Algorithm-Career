@@ -8,6 +8,7 @@ public class AddArraylistThread extends Thread {
 	private Career career;
 	private CareerGUI careergui;
 	private TimeThreadArraylist timeThread;
+	private ThreadAnimation ta;
 
 	public AddArraylistThread(Career career, CareerGUI careergui, TimeThreadArraylist timeThread) {
 		this.career = career;
@@ -19,11 +20,11 @@ public class AddArraylistThread extends Thread {
 	public void run() {
 
 		if (career.getWay() == 1) {
+
 			timeThread.start();
 
 			career.addArraylist();
 			timeThread.deactivate();
-
 		} else if (career.getWay() == 2) {
 
 			timeThread.start();
@@ -35,8 +36,9 @@ public class AddArraylistThread extends Thread {
 //		Platform.runLater(new Thread() {
 //			@Override
 //			public void run() {
-//				careergui.updateGUI();
+//				careergui.circleAnimation();
 //			}
 //		});
+//	}
 	}
 }
