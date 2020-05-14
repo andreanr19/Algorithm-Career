@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="58.0" layoutY="25.0" text="N:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="numberTxtField" layoutX="108.0" layoutY="28.0" />
+      <Label layoutX="58.0" layoutY="120.0" prefHeight="27.0" prefWidth="103.0" text="ALGORITHM">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="addRdoBtn" layoutX="60.0" layoutY="155.0" mnemonicParsing="false" text="Add">
+         <toggleGroup>
+            <ToggleGroup fx:id="algorithm" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="searchRdoBtn" layoutX="60.0" layoutY="182.0" mnemonicParsing="false" text="Search" toggleGroup="$algorithm" />
+      <RadioButton fx:id="deleteRdoBtn" layoutX="60.0" layoutY="213.0" mnemonicParsing="false" text="Delete" toggleGroup="$algorithm" />
+      <Label layoutX="192.0" layoutY="123.0" text="MODE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="iterativeRdoBtn" layoutX="191.0" layoutY="155.0" mnemonicParsing="false" text="Iterative">
+         <toggleGroup>
+            <ToggleGroup fx:id="mode" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="recursiveRdoBtn" layoutX="191.0" layoutY="182.0" mnemonicParsing="false" text="Recursive" toggleGroup="$mode" />
+      <Button fx:id="runBtn" layoutX="129.0" layoutY="254.0" mnemonicParsing="false" onAction="#run" text="Run!">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="469.0" layoutY="147.0" text="Final Results">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="433.0" layoutY="193.0" text="ArrayList">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="637.0" layoutY="192.0" text="ABB">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="526.0" layoutY="192.0" text="LinkedList">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="arrayListTxtFld" layoutX="426.0" layoutY="208.0" prefHeight="27.0" prefWidth="77.0" />
+      <TextField fx:id="abbTxtFld" layoutX="610.0" layoutY="209.0" prefHeight="27.0" prefWidth="80.0" />
+      <TextField fx:id="linkedListTxtFld" layoutX="519.0" layoutY="209.0" prefHeight="27.0" prefWidth="79.0" />
+      <Label fx:id="timerABB" layoutX="615.0" layoutY="213.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="timerArraylist" layoutX="433.0" layoutY="214.0" prefHeight="17.0" prefWidth="61.0" />
+      <Label fx:id="timerLinkedList" layoutX="524.0" layoutY="214.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label layoutX="335.0" layoutY="214.0" text="Add Iterative:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="325.0" layoutY="254.0" text="Add Recursive:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="arrayListRtxtfld" layoutX="427.0" layoutY="249.0" prefHeight="27.0" prefWidth="75.0" />
+      <TextField layoutX="519.0" layoutY="249.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="611.0" layoutY="248.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="428.0" layoutY="289.0" prefHeight="27.0" prefWidth="75.0" />
+      <TextField layoutX="520.0" layoutY="289.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="612.0" layoutY="288.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="428.0" layoutY="328.0" prefHeight="27.0" prefWidth="75.0" />
+      <TextField layoutX="520.0" layoutY="328.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="612.0" layoutY="327.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="428.0" layoutY="370.0" prefHeight="27.0" prefWidth="75.0" />
+      <TextField layoutX="520.0" layoutY="370.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="612.0" layoutY="369.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="428.0" layoutY="412.0" prefHeight="27.0" prefWidth="75.0" />
+      <TextField layoutX="520.0" layoutY="412.0" prefHeight="27.0" prefWidth="78.0" />
+      <TextField layoutX="612.0" layoutY="411.0" prefHeight="27.0" prefWidth="78.0" />
+      <Label layoutX="317.0" layoutY="294.0" text="Search Iterative:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="307.0" layoutY="334.0" text="Search Recursive:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="319.0" layoutY="375.0" text="Delete Iterative:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="310.0" layoutY="417.0" text="Delete Recursive:">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="timerABBaddR" layoutX="617.0" layoutY="253.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="timerarraylistaddRlbl" layoutX="432.0" layoutY="254.0" prefHeight="17.0" prefWidth="61.0" />
+      <Label fx:id="timerLEaddRlbl" layoutX="524.0" layoutY="254.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="timerSearchABBI" layoutX="618.0" layoutY="293.0" prefHeight="17.0" prefWidth="65.0" />
+      <Label fx:id="timerArraylistSearchI" layoutX="432.0" layoutY="294.0" prefHeight="17.0" prefWidth="61.0" />
+      <Label fx:id="timerSearchLEI" layoutX="523.0" layoutY="294.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="searchABBR" layoutX="617.0" layoutY="333.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="searchArraylistR" layoutX="434.0" layoutY="332.0" prefHeight="17.0" prefWidth="61.0" />
+      <Label fx:id="searchLER" layoutX="525.0" layoutY="333.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="deleteABBI" layoutX="616.0" layoutY="374.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="deleteArraylistI" layoutX="434.0" layoutY="374.0" prefHeight="17.0" prefWidth="61.0" />
+      <Label fx:id="deleteLEI" layoutX="524.0" layoutY="374.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="deleteABBR" layoutX="616.0" layoutY="416.0" prefHeight="17.0" prefWidth="69.0" />
+      <Label fx:id="deleteArraylistR" layoutX="435.0" layoutY="416.0" prefHeight="17.0" prefWidth="61.0" />
+      <Label fx:id="deleteLER" layoutX="523.0" layoutY="416.0" prefHeight="17.0" prefWidth="69.0" />
+   </children>
+</Pane>
